@@ -1,36 +1,200 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
-html,
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right bottom, #873572, black);
+.header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-a {
-  display: inline-block;
-  color: lightgrey;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  white-space: nowrap;
-  padding: 12px;
-  border: 1px solid white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.15s ease-in-out;
+.logo h1{
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 34px;
+    line-height:  41.45px;
 }
-
-a:hover {
-  background: rgba(0, 0, 0, 0.23);
-  color: white;
-  transform: scale(1.03);
-  text-decoration: none;
+.header .logo {
+    display: flex;
+    align-items: center;
 }
-a:active {
-  transform: scale(0.98);
+.header .logo img {
+    height: 40px;
+    margin-right: 10px;
 }
-
+.header .nav {
+    /* Width : 430px;
+    Height : 24px;
+    Top : 38px;
+    Left : 505px; */
+    display: flex;
+    gap: 20px;
+}
+.header .nav a {
+    text-decoration: none;
+    color: #000;
+    /* font-weight: 500; */
+}
+i.fa.fa-trash {
+    color: #B88E2F;
+}
+.header .icons {
+    display: flex;
+    gap: 20px;
+}
+.header .icons i {
+    font-size: 20px;
+    color: #000;
+}
+.breadcrumb {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 1440px;
+    height: 316px;
+    top: 100px;
+    background: url(home-banner.jpeg);
+    opacity: 50%;
+    text-align: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.breadcrumb span {
+    color: #000;
+}
+td span {
+    text-align: center;
+    position: relative;
+    top: -30px;
+    left: 10px;
+}
+.cart-container {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-table th {
+    background-color: #F9F1E7;
+    font-weight: 500;
+    text-align: center !important;
+}
+.cart-table {
+    width: 70%;
+    background-color: #fff;
+    padding: 20px;
+}
+.cart-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: left;
+}
+.cart-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.cart-totals {
+    width: 22%;
+    background-color: #F9F1E7;
+    padding: 20px;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.cart-totals h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cart-totals .totals {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cart-totals .totals span {
+    font-size: 18px;
+}
+.cart-totals .totals .total {
+    font-weight: 700;
+    color: #B88E2F;
+}
+.cart-totals button {
+    padding: 10px;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 45%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+span#subtotal {
+    color: gray;
+}
+.footer {
+    background-color: #F9F1E7;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer .feature i {
+    font-size: 24px;
+    color: #000;
+}
+.footer .feature span {
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer .feature p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    td span {
+        text-align: center;
+        position: relative;
+        top: 6px;
+        left: 10px;
+    }
+    .cart-totals .totals {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .cart-totals button {
+        width: 95%;
+    }
+    .footer .feature {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

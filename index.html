@@ -1,22 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <title>Cart - Marmeto</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
-    <title>Coding Assesment L2 boilerplate</title>
-
-</head>
-
-<body>
-    <!-- Your code goes here -->
-    <div class="container">
-        <a href="https://github.com/mmdmrishabh/Coding-assessment-l2-Boilerplate-code/blob/main/Readme.md" target="_blank">Read how to work with boilerplate</a>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          alt="Marmeto Logo"
+          height="40"
+          src="logo.png"
+          width="40"
+        />
+        <h1>Marmeto</h1>
+      </div>
+      <nav class="nav">
+        <a href="#"> Home </a>
+        <a href="#"> Shop </a>
+        <a href="#"> About </a>
+        <a href="#"> Contact </a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-search"> </i>
+        <i class="fas fa-heart"> </i>
+        <i class="fas fa-shopping-cart"> </i>
+      </div>
+    </header>
+    <div class="breadcrumb">
+      <a href="#"> Home </a>
+      <span> &gt; </span>
+      <span> Cart </span>
     </div>
-    <!-- Happy coding 😊 -->
-    <script src="./script.js"></script>
-</body>
+    <div class="cart-container">
+      <div class="cart-table">
+        <table id="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cart-table-body">
+          </tbody>
+        </table>
+      </div>
+      <div class="cart-totals">
+        <h2>Cart Totals</h2>
+        <div class="totals">
+          <span> Subtotal </span>
+          <span id="subtotal">Rs. 0.00</span>
+        </div>
+        <div class="totals">
+          <span> Total </span>
+          <span class="total" id="total">Rs. 0.00</span>
+        </div>
+        <button>Check Out</button>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="feature">
+        <i class="fas fa-trophy"> </i>
+        <div>
+          <span> High Quality </span>
+          <p>crafted from top materials</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"> </i>
+        <div>
+          <span> Warranty Protection </span>
+          <p>Over 2 years</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shipping-fast"> </i>
+        <div>
+          <span> Free Shipping </span>
+          <p>Order over 150 $</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"> </i>
+        <div>
+          <span> 24 / 7 Support </span>
+          <p>Dedicated support</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Make API call to retrieve cart data
+      fetch('https://cdn.shopify.com/s/files/1/0883/2188/4479/files/apiCartData.json?v=1728384889')
+        .then(response => response.json())
+        .then(data => {
+          const cartTableBody = document.getElementById('cart-table-body');
+          const subtotalElement = document.getElementById('subtotal');
+          const totalElement = document.getElementById('total');
 
+          let subtotal = 0;
+          let total = 0;
+
+          data.items.forEach(item => {
+            const tableRow = document.createElement('tr');
+            tableRow.innerHTML = `
+              <td>
+                <img
+                  alt="${item.title}"
+                  height="80"
+                  src="${item.image}"
+                  width="80"
+                />
+                <span> ${item.title} </span>
+              </td>
+              <td>Rs. ${item.price}</td>
+              <td>
+                <input min="1" type="number" value="${item.quantity}" />
+              </td>
+              <td>Rs. ${item.price}</td>
+              <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+            `;
+            cartTableBody.appendChild(tableRow);
+
+            subtotal += item.price;
+            total += item.price;
+          });
+
+          subtotalElement.textContent = `Rs. ${subtotal}`;
+          totalElement.textContent = `Rs. ${total}`;
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+  </body>
 </html>
