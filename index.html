@@ -5,17 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
-    <title>Coding Assesment L2 boilerplate</title>
-
+    <title>Shopping Cart</title>
 </head>
 
 <body>
-    <!-- Your code goes here -->
-    <div class="container">
-        <a href="https://github.com/mmdmrishabh/Coding-assessment-l2-Boilerplate-code/blob/main/Readme.md" target="_blank">Read how to work with boilerplate</a>
-    </div>
-    <!-- Happy coding 😊 -->
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>My Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <a href="#cart">🛒 Cart</a>
+        </div>
+    </header>
+
+    <!-- Cart Content Area -->
+    <main class="cart-content">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="item1.jpg" alt="Item 1">
+                <div class="item-details">
+                    <h3>Item 1</h3>
+                    <p>Price: $10.00</p>
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="item2.jpg" alt="Item 2">
+                <div class="item-details">
+                    <h3>Item 2</h3>
+                    <p>Price: $15.00</p>
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <!-- Add more cart items as needed -->
+        </div>
+
+        <div class="cart-totals">
+            <h3>Cart Totals</h3>
+            <p>Subtotal: $25.00</p>
+            <p>Total: $25.00</p>
+            <button class="checkout-button">Checkout</button>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="service-icons">
+            <div class="icon">
+                <img src="high-quality-icon.png" alt="High Quality">
+                <p>High Quality</p>
+            </div>
+            <div class="icon">
+                <img src="warranty-icon.png" alt="Warranty Protection">
+                <p>Warranty Protection</p>
+            </div>
+            <div class="icon">
+                <img src="customer-service-icon.png" alt="Customer Service">
+                <p>24/7 Customer Service</p>
+            </div>
+            <!-- Add more service icons as needed -->
+        </div>
+    </footer>
+
     <script src="./script.js"></script>
 </body>
 
