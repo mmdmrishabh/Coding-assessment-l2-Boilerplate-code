@@ -1,36 +1,72 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right bottom, #873572, black);
-}
-a {
-  display: inline-block;
-  color: lightgrey;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  white-space: nowrap;
-  padding: 12px;
-  border: 1px solid white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.15s ease-in-out;
+* {
+    box-sizing: border-box;
 }
 
-a:hover {
-  background: rgba(0, 0, 0, 0.23);
-  color: white;
-  transform: scale(1.03);
-  text-decoration: none;
-}
-a:active {
-  transform: scale(0.98);
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(to right bottom, #873572, black);
+    color: lightgrey;
 }
 
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cart-items, .cart-totals {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+    .cart-container {
+        flex-direction: row; /* Switch to row layout on larger screens */
+    }
+
+    .cart-items {
+        flex: 2; /* Takes up 2/3 of the space */
+    }
+
+    .cart-totals {
+        flex: 1; /* Takes up 1/3 of the space */
+        margin-left: 20px; /* Add some space between columns */
+    }
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    color: white;
+}
+
+button {
+    background-color: #873572;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6a2c4c; /* Darker shade on hover */
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .cart-item {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+}
