@@ -4,19 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
-    <title>Coding Assesment L2 boilerplate</title>
-
+    <title>Product Detail Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <!-- Your code goes here -->
-    <div class="container">
-        <a href="https://github.com/mmdmrishabh/Coding-assessment-l2-Boilerplate-code/blob/main/Readme.md" target="_blank">Read how to work with boilerplate</a>
+    <div class="product-container">
+        <div class="product-image-section">
+            <div class="product-main-image">
+                <img id="mainImage"
+                    src="https://s3-alpha-sig.figma.com/img/d636/7d6d/f34ce14e7187edeeb026d73413e4a29c?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZodDcY2kA0Ni06gad~zdgxR7wFAFtlfm-FU-mw-eLZTbXt43ZX9HifCQez2EY-UWilImSyTcz95Po9lemBNkPk-dY4AtcncHPEvB5hDRieK~qY-fiKWw5L80YNQo~9iu-JrYX~KlN1-gzHY9GpfI1MF0mDsygyZ3t0RHnQiBY-UwpPKir~QHnC4~1Y1CckIfhk9Jy4BnVB~yutTVd7xTrlpMl~LyDJ2X2p3isa~h7wl63zOONAdfs2BxtX1pVB~3hYKgjYR1KmseIaauFj3J2vAZw3zOykZ5p08lDFt64XB6wnOgz1f9pQA8Di8jGfEfHdwBg~mYZuoKojGOm~nNjw__"
+                    alt="Product Image">
+            </div>
+            <div class="product-thumbnails">
+                <img src="https://s3-alpha-sig.figma.com/img/2b85/4ec0/815f49c8ce3ddd231e2da63ce0596dc4?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mVj~0c4ZeS2wQGMAC-j8ftumA9ifF6T4LarB0tVtaFz0ZcuWSLPzXzce2q4buLCuv578VMkFlPgqmxnHYYxdTBEZmYTJy60R6ZFIxb2mTgtG9cFNyHWKoH8-XeCDzmGc-hypclW6ehzEjtztOhA~-RfzpagEO9blhOLWmwqwetxT3spGTlOqtf7-epF2Wg3OaYpA28RCcnFVA2Fmfg0WtyZG2R5VFwfSg8UfBfacx8UCtwFck4eTZGgME-k~-sPkiVhgNAsYV5QN9Pkc2I~UcCO6phyJ2vsc1hUgztItGs-gYK0cyUTAi53HQSEPo3ALzl5YqPbXpVGH9OfAdnWqCw__"
+                    alt="Thumbnail 1" class="thumbnail"
+                    onclick="changeImage('https://s3-alpha-sig.figma.com/img/2b85/4ec0/815f49c8ce3ddd231e2da63ce0596dc4?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mVj~0c4ZeS2wQGMAC-j8ftumA9ifF6T4LarB0tVtaFz0ZcuWSLPzXzce2q4buLCuv578VMkFlPgqmxnHYYxdTBEZmYTJy60R6ZFIxb2mTgtG9cFNyHWKoH8-XeCDzmGc-hypclW6ehzEjtztOhA~-RfzpagEO9blhOLWmwqwetxT3spGTlOqtf7-epF2Wg3OaYpA28RCcnFVA2Fmfg0WtyZG2R5VFwfSg8UfBfacx8UCtwFck4eTZGgME-k~-sPkiVhgNAsYV5QN9Pkc2I~UcCO6phyJ2vsc1hUgztItGs-gYK0cyUTAi53HQSEPo3ALzl5YqPbXpVGH9OfAdnWqCw__')">
+                <img src="https://s3-alpha-sig.figma.com/img/7f07/20f0/38539658df252c621f52c64231e8986a?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=er7D~Yqemuiz4sOI19rEUTfNdet8aFlyevDFJzZqurTD6tW-5KhKUhEwW58xY55RDtfMq7fB0D~bmwLexRXYwZY2JQ3aLHyitO7DP8eHOwmMBq23GQbeykqDPQZdmlnVl~Pp5iRRqu2zTlKkH1GWyFMkUeEeRaDFXYzEY3EkwyoQ4FjzeE2RHNeCpT4bVYAJ9V5T~AuQv~Ll3vN8ztBlyGdUcVsmAN7CRR5ReoVJz9NaFeJShHzuXmga2YSc8OmQ6-ADBDn2rqc0b-Fj5mu~O3X7-I2P1bJOz6g75PpYfV-o7pbAFcYwloXrHVFbb5Na6B1EDOoAeMzZ2VNPH3qYrA__"
+                    alt="Thumbnail 2" class="thumbnail"
+                    onclick="changeImage('https://s3-alpha-sig.figma.com/img/7f07/20f0/38539658df252c621f52c64231e8986a?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=er7D~Yqemuiz4sOI19rEUTfNdet8aFlyevDFJzZqurTD6tW-5KhKUhEwW58xY55RDtfMq7fB0D~bmwLexRXYwZY2JQ3aLHyitO7DP8eHOwmMBq23GQbeykqDPQZdmlnVl~Pp5iRRqu2zTlKkH1GWyFMkUeEeRaDFXYzEY3EkwyoQ4FjzeE2RHNeCpT4bVYAJ9V5T~AuQv~Ll3vN8ztBlyGdUcVsmAN7CRR5ReoVJz9NaFeJShHzuXmga2YSc8OmQ6-ADBDn2rqc0b-Fj5mu~O3X7-I2P1bJOz6g75PpYfV-o7pbAFcYwloXrHVFbb5Na6B1EDOoAeMzZ2VNPH3qYrA__')">
+                <img src="https://s3-alpha-sig.figma.com/img/8a12/5fd1/8ad1df2ca3d3367baa54e79cf0caeff1?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JUkEXovAGTNcuJocpxAQSwMgwTNy1vCU8E2Fa~wQJRGSBms4ojajberZ7wAUzVgsbUJwkmDnKLGv4RuAYL~urulIK~p5b7yFq7je8SLnkEet3FeIzcgJI77LtKG-6yrFZplDC0rIAKemC5kfzS4ryuXxIZvXfH0PsoaEZqCCC0WFdHAGblzsNZUQJMYah2gaQ3WINtRf7JgnJIc2e-vo0N7yUufZ9mJP1MK66Myt3oNcNkp8bIACIpfxC-xqC-t4SlCFPZ5-yLtsEi12iC0DjAjTeiMxBVDkxa5u4IeeIwqJdp7VDtpkym0eGIE7WX2x8UtnHprayAHsZI1L8aTEow__"
+                    alt="Thumbnail 3" class="thumbnail"
+                    onclick="changeImage('https://s3-alpha-sig.figma.com/img/8a12/5fd1/8ad1df2ca3d3367baa54e79cf0caeff1?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JUkEXovAGTNcuJocpxAQSwMgwTNy1vCU8E2Fa~wQJRGSBms4ojajberZ7wAUzVgsbUJwkmDnKLGv4RuAYL~urulIK~p5b7yFq7je8SLnkEet3FeIzcgJI77LtKG-6yrFZplDC0rIAKemC5kfzS4ryuXxIZvXfH0PsoaEZqCCC0WFdHAGblzsNZUQJMYah2gaQ3WINtRf7JgnJIc2e-vo0N7yUufZ9mJP1MK66Myt3oNcNkp8bIACIpfxC-xqC-t4SlCFPZ5-yLtsEi12iC0DjAjTeiMxBVDkxa5u4IeeIwqJdp7VDtpkym0eGIE7WX2x8UtnHprayAHsZI1L8aTEow__')">
+                <img src="https://s3-alpha-sig.figma.com/img/2b85/4ec0/815f49c8ce3ddd231e2da63ce0596dc4?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mVj~0c4ZeS2wQGMAC-j8ftumA9ifF6T4LarB0tVtaFz0ZcuWSLPzXzce2q4buLCuv578VMkFlPgqmxnHYYxdTBEZmYTJy60R6ZFIxb2mTgtG9cFNyHWKoH8-XeCDzmGc-hypclW6ehzEjtztOhA~-RfzpagEO9blhOLWmwqwetxT3spGTlOqtf7-epF2Wg3OaYpA28RCcnFVA2Fmfg0WtyZG2R5VFwfSg8UfBfacx8UCtwFck4eTZGgME-k~-sPkiVhgNAsYV5QN9Pkc2I~UcCO6phyJ2vsc1hUgztItGs-gYK0cyUTAi53HQSEPo3ALzl5YqPbXpVGH9OfAdnWqCw__"
+                    alt="Thumbnail 4" class="thumbnail"
+                    onclick="changeImage('https://s3-alpha-sig.figma.com/img/2b85/4ec0/815f49c8ce3ddd231e2da63ce0596dc4?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mVj~0c4ZeS2wQGMAC-j8ftumA9ifF6T4LarB0tVtaFz0ZcuWSLPzXzce2q4buLCuv578VMkFlPgqmxnHYYxdTBEZmYTJy60R6ZFIxb2mTgtG9cFNyHWKoH8-XeCDzmGc-hypclW6ehzEjtztOhA~-RfzpagEO9blhOLWmwqwetxT3spGTlOqtf7-epF2Wg3OaYpA28RCcnFVA2Fmfg0WtyZG2R5VFwfSg8UfBfacx8UCtwFck4eTZGgME-k~-sPkiVhgNAsYV5QN9Pkc2I~UcCO6phyJ2vsc1hUgztItGs-gYK0cyUTAi53HQSEPo3ALzl5YqPbXpVGH9OfAdnWqCw__')">
+            </div>
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <div class="product-vendor">Marmeto</div>
+                <h1 class="product-title">Embrace Sideboard</h1>
+                <div class="product-pricing">
+                    <span id="price">$12,999.00</span>
+                    <span id="percentageOff" class="percentage-off">35% Off</span>
+                    <div id="compareAtPrice" class="compare-at-price">$19,999.00</div>
+                </div>
+                <div class="color-selector">
+                    <label for="color">Choose a Color:</label>
+                    <div id="colorOptions" class="color-options">
+                        <div class="color-option" data-color="#ECDECC" style="background-color: #ECDECC;"
+                            onclick="selectColor('#ECDECC')"></div>
+                        <div class="color-option" data-color="#BBD278" style="background-color:#BBD278;"
+                            onclick="selectColor('#BBD278')"></div>
+                        <div class="color-option" data-color="#BBC1F8" style="background-color: #BBC1F8;"
+                            onclick="selectColor('#BBC1F8')"></div>
+                        <div class="color-option" data-color="#FFD3F8" style="background-color: #FFD3F8;"
+                            onclick="selectColor('#FFD3F8')"></div>
+                    </div>
+                </div>
+                <div class="size-selector">
+                    <label>Choose a Size:</label>
+                    <div id="sizeOptions" class="size-options">
+                        <label class="size-option">
+                            <input type="radio" name="size" value="small" checked> Small
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="medium"> Medium
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="large"> Large
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="extra-large"> Extra Large
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="xxl"> XXL
+                        </label>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <div class="quantity-selector">
+                        <button onclick="updateQuantity(-1)">-</button>
+                        <p class="quantity-number">1</p>
+                        <button onclick="updateQuantity(1)">+</button>
+                    </div>
+                    <button id="addToCartButton"><i class="fa-solid fa-bag-shopping"></i>    Add to Cart</button>
+                </div>
+                <div id="addToCartMessage" class="add-to-cart-message"></div>
+            </div>
+            <hr style="color:#E4E4E4;">
+            <div class="product-description">
+                <h2>Description</h2>
+                <p>The Embrace Sideboard is a stylish wear. With a top cloth designed to provide superior protection
+                    and look great, this storage solution is both functional and attractive. It fits seamlessly into
+                    any home decor, with clean lines and a timeless look. Crafted from premium materials for a
+                    combination of style, durability, and reliability.</p>
+            </div>
+        </div>
     </div>
-    <!-- Happy coding 😊 -->
-    <script src="./script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
